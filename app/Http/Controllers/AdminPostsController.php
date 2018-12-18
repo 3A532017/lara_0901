@@ -36,7 +36,7 @@ class AdminPostsController extends Controller
         $post->update($request->all());
         return redirect()->route('admin.posts.index');
     }
-    
+
     public function store(Request $request)
     {
         Post::create($request->all());
