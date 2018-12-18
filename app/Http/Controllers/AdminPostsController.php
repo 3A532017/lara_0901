@@ -29,6 +29,14 @@ class AdminPostsController extends Controller
 
         return view('admin.posts.edit', $data);
     }
+
+    public function update(Request $request,$id)
+    {
+        $post = Post::find($id);
+        $post->update($request->all());
+        return redirect()->route('admin.posts.index');
+    }
+    
     public function store(Request $request)
     {
         Post::create($request->all());
